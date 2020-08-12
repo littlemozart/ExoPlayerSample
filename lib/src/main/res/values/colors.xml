@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorToastBackground">#F0ECF3FD</color>
+    <color name="colorHalfTransparent">#80808080</color>
+    <color name="colorBuffered">#80AFAFAF</color>
+    <color name="colorUnplayed">#5C5C5C</color>
+    <color name="colorTimeToastText">#666666</color>
+</resources>

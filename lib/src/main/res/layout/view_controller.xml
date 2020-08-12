@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/exo_lock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_unlock"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorHalfTransparent"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/control_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/controller_height"
+        android:background="@drawable/bg_controller"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/controller_horizontal_padding"
+        android:paddingTop="8dp"
+        android:paddingEnd="@dimen/controller_horizontal_padding"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/exo_play"
+                android:layout_width="@dimen/controller_btn_size"
+                android:layout_height="@dimen/controller_btn_size"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:src="@drawable/ic_play"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/exo_pause"
+                android:layout_width="@dimen/controller_btn_size"
+                android:layout_height="@dimen/controller_btn_size"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:src="@drawable/ic_pause"
+                tools:ignore="ContentDescription" />
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.google.android.exoplayer2.ui.DefaultTimeBar
+                android:id="@+id/exo_progress"
+                style="?android:seekBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:maxHeight="@dimen/time_bar_height"
+                android:minHeight="@dimen/time_bar_height"
+                app:ad_marker_color="@android:color/white"
+                app:ad_marker_width="@dimen/time_bar_height"
+                app:bar_height="@dimen/time_bar_height"
+                app:buffered_color="@color/colorBuffered"
+                app:played_color="?android:colorAccent"
+                app:scrubber_drawable="@drawable/bg_thumb"
+                app:unplayed_color="@color/colorUnplayed" />
+
+            <LinearLayout
+                android:id="@+id/time_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/controller_horizontal_padding"
+                android:paddingEnd="@dimen/controller_horizontal_padding">
+
+                <TextView
+                    android:id="@+id/exo_position"
+                    style="@style/MediaControlText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/MediaControlText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" / "
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/exo_duration"
+                    style="@style/MediaControlText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/exo_speed"
+            style="@style/MediaControlText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_speed_btn"
+            android:gravity="center"
+            android:minWidth="56dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="1.0X"
+            android:visibility="gone"
+            tools:ignore="HardcodedText"
+            tools:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/exo_fullscreen"
+            android:layout_width="@dimen/controller_btn_size"
+            android:layout_height="@dimen/controller_btn_size"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:src="@drawable/ic_fullscreen_enter"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

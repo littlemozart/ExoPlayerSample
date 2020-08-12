@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomVideoView">
+        <attr name="time_toast_layout_id" format="reference" />
+        <attr name="player_view_layout_id" format="reference" />
+    </declare-styleable>
+</resources>
